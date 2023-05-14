@@ -8,13 +8,13 @@ interface Props {
 
 const InputBox: React.FC<Props> = (props) => {
   return (
-    <div>
-      <label>{props.label}</label>
+    <div className="w-full flex">
+      <label className="basis-1/3">{props.label}</label>
       <input
         type="text"
         id={props.id}
         placeholder={props.placeholder}
-        className="mx-2 border-2 p-2"
+        className="mx-2 border-2 p-2 basis-2/3"
         value={props.value}
         onChange={props.onChange}
       />

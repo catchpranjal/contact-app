@@ -13,11 +13,13 @@ interface Props {
 
 const ContactItem: React.FC<Props> = (props) => {
   return (
-    <div>
-      <span>
-        {props.firstName} {props.lastName}
-      </span>
-      <span>{props.isActive ? "Active" : "Not Active"}</span>
+    <div className="border-2 border-gray-400 p-2 m-2">
+      <div className="flex flex-col p-2">
+        <span className="font-bold">
+          {props.firstName} {props.lastName}
+        </span>
+        <span>{props.isActive ? "Active" : "Not Active"}</span>
+      </div>
       <div className="flex flex-col max-w-xs">
         <div className="m-2 w-60">
           <ButtonSecondary title="Edit" onClick={props.onEdit} />

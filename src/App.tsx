@@ -3,6 +3,8 @@ import Layout from "./components/layout/Layout";
 import Contact from "./components/pages/Contact/Contact";
 import ChartMaps from "./components/pages/Chart/ChartMaps";
 import { QueryClient, QueryClientProvider } from "react-query";
+import Maps from "./components/pages/Chart/Maps";
+import ChartItem from "./components/pages/Chart/ChartItem";
 
 const queryClient = new QueryClient();
 
@@ -16,7 +18,15 @@ const router = createBrowserRouter([
         path: "/chart",
         element: (
           <QueryClientProvider client={queryClient}>
-            <ChartMaps />
+            <ChartItem />
+          </QueryClientProvider>
+        ),
+      },
+      {
+        path: "/maps",
+        element: (
+          <QueryClientProvider client={queryClient}>
+            <Maps />
           </QueryClientProvider>
         ),
       },

@@ -39,53 +39,61 @@ const ContactForm: React.FC<Props> = (props) => {
   };
 
   return (
-    <div>
-      <div className="mt-1">
-        <InputBox
-          id="firstname"
-          placeholder="Enter First Name"
-          label="First Name"
-          value={firstName}
-          onChange={firstNameChangeHandler}
-        />
+    <>
+      <div className="text-center font-bold uppercase text-lg p-2">
+        Create Contact
       </div>
-      <div className="mt-1">
-        <InputBox
-          id="lastname"
-          placeholder="Enter Last Name"
-          label="Last Name"
-          value={lastName}
-          onChange={lastNameChangeHandler}
-        />
-      </div>
-      <div className="mt-1 flex">
-        <div>Status</div>
-        <div className="mx-2 flex flex-col">
-          <div>
-            <input
-              type="radio"
-              name="status"
-              title="Active"
-              defaultChecked
-              onChange={statusChangeHandler}
-            />
-            <label>Active</label>
-          </div>
-          <div>
-            <input
-              type="radio"
-              name="status"
-              title="InActive"
-              onChange={statusChangeHandler}
-            />
-            <label>InActive</label>
+      <hr />
+      <div className="max-w-sm mt-6">
+        <div className="mt-2">
+          <InputBox
+            id="firstname"
+            placeholder="Enter First Name"
+            label="First Name"
+            value={firstName}
+            onChange={firstNameChangeHandler}
+          />
+        </div>
+        <div className="mt-2">
+          <InputBox
+            id="lastname"
+            placeholder="Enter Last Name"
+            label="Last Name"
+            value={lastName}
+            onChange={lastNameChangeHandler}
+          />
+        </div>
+        <div className="mt-2 flex items-center">
+          <div className="basis-1/3">Status</div>
+          <div className="mx-2 flex flex-col basis-2/3">
+            <div>
+              <input
+                type="radio"
+                name="status"
+                title="Active"
+                defaultChecked
+                onChange={statusChangeHandler}
+                className="cursor-pointer"
+              />
+              <label className="ml-2">Active</label>
+            </div>
+            <div>
+              <input
+                type="radio"
+                name="status"
+                title="InActive"
+                onChange={statusChangeHandler}
+                className="cursor-pointer"
+              />
+              <label className="ml-2">InActive</label>
+            </div>
           </div>
         </div>
+        <div className="mt-4">
+          <ButtonPrimary title="Save Contact" onClick={saveContactHandler} />
+        </div>
       </div>
-      <div className="mt-1">
-        <ButtonPrimary title="Save Contact" onClick={saveContactHandler} />
-      </div>
-    </div>
+    </>
   );
 };
 

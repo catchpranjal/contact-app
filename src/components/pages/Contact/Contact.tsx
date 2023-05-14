@@ -48,7 +48,7 @@ const Contact = () => {
           <ButtonPrimary title="Create Contact" onClick={openModalHandler} />
         </div>
       </div>
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-3">
         {contacts.map((item) => (
           <ContactItem
             key={item.id}
@@ -63,7 +63,7 @@ const Contact = () => {
       </div>
       {contacts.length == 0 ? (
         <div className="flex justify-center">
-          <div className="border-2 max-w-md p-5 mt-5 font-semibold">
+          <div className="border-2 border-gray-400 rounded max-w-md p-5 mt-5 font-semibold">
             No Contact Found. Please add contact from create contact button.
           </div>
         </div>
