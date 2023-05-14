@@ -10,7 +10,7 @@ import { ContactModel } from "../../../models/ContactModel";
 import { contactSliceActions } from "../../../store/slices/contact-slice";
 import ButtonPrimary from "../../utils/ButtonPrimary";
 
-const Contact = () => {
+const Contact: React.FC = () => {
   const dispatch = useDispatch();
   const contacts = useSelector<RootState, ContactModel[]>(
     (state) => state.contactSlice.contacts
@@ -48,6 +48,7 @@ const Contact = () => {
           <ButtonPrimary title="Create Contact" onClick={openModalHandler} />
         </div>
       </div>
+      {/* contact Items are shown in grid of two column for larger screen & one column for smartphone screen  */}
       <div className="grid grid-cols-1 md:grid-cols-2 mt-3">
         {contacts.map((item) => (
           <ContactItem

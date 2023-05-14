@@ -1,5 +1,6 @@
 import ReactDOM from "react-dom";
 
+// Overlay is the modal card
 const Overlay = (props: any) => {
   return (
     <div className="fixed z-50 h-1/2 rounded-lg w-11/12 md:w-2/5 m-auto inset-x-0 inset-y-0 p-4 bg-white shadow-md">
@@ -8,6 +9,7 @@ const Overlay = (props: any) => {
   );
 };
 
+// Backdrop is under the modal card to give blur overlay effect. we can close the modal clicking on the backdrop
 const Backdrop = (props: any) => {
   return (
     <div
@@ -17,6 +19,7 @@ const Backdrop = (props: any) => {
   );
 };
 
+// React Portal is used because modal is overlay to whole screen. it should not be nested inside any markup
 const Modal = (props: any) => {
   return (
     <>

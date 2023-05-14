@@ -3,11 +3,15 @@ import Layout from "./components/layout/Layout";
 import Contact from "./components/pages/Contact/Contact";
 import ChartMaps from "./components/pages/Chart/ChartMaps";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Maps from "./components/pages/Chart/Maps";
-import ChartItem from "./components/pages/Chart/ChartItem";
 
+// provided tanstack query for chart route
 const queryClient = new QueryClient();
 
+/*
+Here we are setting two routes
+/ -- for Contact Page
+/chart -- for Chart & Maps Page
+*/
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,15 +22,7 @@ const router = createBrowserRouter([
         path: "/chart",
         element: (
           <QueryClientProvider client={queryClient}>
-            <ChartItem />
-          </QueryClientProvider>
-        ),
-      },
-      {
-        path: "/maps",
-        element: (
-          <QueryClientProvider client={queryClient}>
-            <Maps />
+            <ChartMaps />
           </QueryClientProvider>
         ),
       },

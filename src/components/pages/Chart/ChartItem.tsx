@@ -40,7 +40,7 @@ export const options = {
 let dataArr: LineModel = { labels: [], datasets: [] };
 
 export default function ChartItem() {
-  const { isLoading, error, data } = useQuery("Data Fetching", () =>
+  const { isLoading, error, data } = useQuery("alldata", () =>
     fetch("https://disease.sh/v3/covid-19/historical/all?lastdays=all").then(
       (res) => res.json()
     )

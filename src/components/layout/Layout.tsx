@@ -5,7 +5,7 @@ import ReactDOM from "react-dom";
 import Drawer from "./Drawer";
 import { useState } from "react";
 
-const Layout = () => {
+const Layout: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
 
   const openDrawerHandler = () => {

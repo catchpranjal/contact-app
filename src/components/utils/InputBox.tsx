@@ -6,6 +6,7 @@ interface Props {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
+// Custom Input Component.
 const InputBox: React.FC<Props> = (props) => {
   return (
     <div className="w-full flex">

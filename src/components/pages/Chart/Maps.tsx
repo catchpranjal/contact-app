@@ -1,9 +1,10 @@
+import React from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useQuery } from "react-query";
 
 const position = [51.505, -0.09];
-const Maps = () => {
-  const { isLoading, error, data } = useQuery("Data Fetching", () =>
+const Maps: React.FC = () => {
+  const { isLoading, error, data } = useQuery("countries", () =>
     fetch("https://disease.sh/v3/covid-19/countries").then((res) => res.json())
   );
   if (!data) {
