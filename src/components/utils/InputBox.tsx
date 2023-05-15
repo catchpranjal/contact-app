@@ -15,7 +15,7 @@ const InputBox: React.FC<Props> = (props) => {
         type="text"
         id={props.id}
         placeholder={props.placeholder}
-        className="mx-2 border-2 p-2 basis-2/3"
+        className="mx-2 border-2 p-2 basis-2/3 outline-0"
         value={props.value}
         onChange={props.onChange}
       />

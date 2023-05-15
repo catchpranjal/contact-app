@@ -28,6 +28,13 @@ const ContactForm: React.FC<Props> = (props) => {
   };
 
   const saveContactHandler = () => {
+    if (firstName === "") {
+      return;
+    }
+    if (lastName == "") {
+      return;
+    }
+
     const item = {
       id: Date.now(),
       firstName: firstName,
